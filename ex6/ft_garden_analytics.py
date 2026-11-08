@@ -68,11 +68,11 @@ class Plant:
         else:
             print("Age updated: ", self._age, "Days", sep="")
 
-    def get_height(self) -> None:
-        print(self._height)
+    def get_height(self) -> float:
+        return (self._height)
 
-    def get_age(self) -> None:
-        print(self._age)
+    def get_age(self) -> int:
+        return (self._age)
 
     def show(self) -> None:
         self.__stats.show_inc()

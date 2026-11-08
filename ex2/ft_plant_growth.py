@@ -1,25 +1,27 @@
 class Plant:
-    def __init__(self, name: str, height: float,
-                 age: int, growth: float) -> None:
-        self.name: str = name
-        self.height: float = height
-        self._age: int = age
-        self.growth = growth
+    name: str
+    height: float
+    ages: int
+    growth: float
 
     def grow(self) -> None:
         self.height += self.growth
 
     def age(self) -> None:
-        self._age += 1
+        self.ages += 1
 
     def show(self) -> None:
         print(self.name.capitalize(), ":  ", round(self.height, 1),
-              "cm, ", self._age, " days old", sep="")
+              "cm, ", self.ages, " days old", sep="")
 
 
 if (__name__ == "__main__"):
     index: int = 1
-    p1 = Plant("Rose", 25.0, 30, 0.8)
+    p1 = Plant()
+    p1.name = "rose"
+    p1.height = 25.0
+    p1.ages = 30
+    p1.growth = 0.8
     origin_height: float = p1.height
     p1.show()
     for index in range(7):
